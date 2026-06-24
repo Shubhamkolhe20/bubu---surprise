@@ -4,23 +4,24 @@ function playMusic() {
   const music = document.getElementById("bgMusic");
 
   if (music) {
-      music.play().catch(() => {
-          console.log("Music blocked until user taps screen");
-      });
+    music.play().catch(() => {
+      console.log("Music blocked until user taps screen");
+    });
   }
 }
 
-// ---------------- OPEN INDEX1 PAGE ----------------
+// ---------------- OPEN INDEX PAGE ----------------
 
 function openStory() {
   playMusic();
 
   setTimeout(() => {
+    // FIX: safer relative path
     window.location.href = "love-surprise/index1.html";
   }, 600);
 }
 
-// ---------------- RANDOM MOVE BUTTON (OPTIONAL) ----------------
+// ---------------- RANDOM MOVE BUTTON ----------------
 
 function moveRandomEl(elm) {
   elm.style.position = "absolute";
@@ -32,31 +33,40 @@ const moveRandom = document.querySelector("#move-random");
 
 if (moveRandom) {
   moveRandom.addEventListener("click", (e) => {
-      moveRandomEl(e.target);
+    moveRandomEl(e.target);
   });
 }
 
-// ---------------- COUNTDOWN ----------------
+// ---------------- COUNTDOWN (FIXED) ----------------
 
-const targetDate = new Date("June 26, 2026 00:00:00").getTime();
+window.addEventListener("DOMContentLoaded", () => {
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const targetDate = new Date(2026, 5, 26, 0, 0, 0).getTime(); 
+  // June = 5 (JS months start from 0)
 
   const el = document.getElementById("countdown");
 
-  if (el) {
-      el.innerHTML = `
-      ⏳ ${days} Days ❤️ ${hours} Hours ❤️ ${minutes} Minutes ❤️ ${seconds} Seconds
-      `;
-  }
-}, 1000);
+  if (!el) return;
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      el.innerHTML = "💖 Time Completed 💖";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    el.innerHTML =
+      `⏳ ${days} Days ❤️ ${hours} Hours ❤️ ${minutes} Minutes ❤️ ${seconds} Seconds`;
+
+  }, 1000);
+});
 
 // ---------------- TYPEWRITER ----------------
 
@@ -80,9 +90,9 @@ function typeWriter() {
   if (!el) return;
 
   if (i < message.length) {
-      el.innerHTML += message.charAt(i);
-      i++;
-      setTimeout(typeWriter, 60);
+    el.innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 60);
   }
 }
 
@@ -94,7 +104,7 @@ const btn = document.getElementById("surpriseBtn");
 
 if (btn) {
   btn.addEventListener("click", () => {
-      alert("❤️ Bubu, Thank You For Being The Best Part Of My Life ❤️");
+    alert("❤️ Bubu, Thank You For Being The Best Part Of My Life ❤️");
   });
 }
 
@@ -110,7 +120,7 @@ setInterval(() => {
   document.body.appendChild(heart);
 
   setTimeout(() => {
-      heart.remove();
+    heart.remove();
   }, 5000);
 
 }, 600);
