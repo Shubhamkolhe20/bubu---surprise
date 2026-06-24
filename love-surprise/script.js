@@ -16,7 +16,7 @@ function openStory() {
   playMusic();
 
   setTimeout(() => {
-    window.location.href = "../love-surprise/index1.html";
+    window.location.href = "love-surprise/index1.html";
   }, 600);
 }
 
