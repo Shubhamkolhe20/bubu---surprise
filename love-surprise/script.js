@@ -17,7 +17,7 @@ function openStory() {
 
   setTimeout(() => {
     // FIX: safer relative path
-    window.location.href = "love-surprise/index1.html";
+    window.location.href = "../love-surprise/index1.html";
   }, 600);
 }
 
