@@ -6,7 +6,7 @@ function playMusic() {
   if (music) {
     music.play().catch(() => {
       console.log("Music blocked until user taps screen");
-    });
+    }); 
   }
 }
 
