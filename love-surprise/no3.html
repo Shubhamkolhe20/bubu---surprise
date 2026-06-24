@@ -18,8 +18,9 @@
     </div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <h1>Baby Man jao na! Kitna bhav khaogi 😭</h1>
-    <p>bhut glt baat hai yrr😭</p>
+    <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: bisque;">Baby HAPPY BIRTHDAY TO U 🤗 </h1>
+    <p style="color: rgb(89, 100, 121);"> Chole bature - Long Drive me chalegi </p>
+    <h2>Mere Sath Life Enjoy kregi</h2>
 
     <div class="btn">
       <a href="yes.html">Yes</a>
@@ -28,6 +29,33 @@
   </div>
 
   <script src="./script.js"></script>
+   <!-- BACKGROUND MUSIC -->
+   <audio id="bgMusic" autoplay loop>
+    <source src="../music/romantic-song.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    // auto play music on page load
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.play().catch((err) => {
+          console.log("Music blocked:", err);
+        });
+      }
+    });
+
+    // stop music function
+    function stopMusic() {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.pause();
+        music.currentTime = 0; // restart next time
+      }
+    }
+  </script>
 </body>
 
 </html>

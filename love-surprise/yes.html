@@ -18,8 +18,40 @@
         Cat GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
     </div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <h1>I knew it! You Love me a lot 😘</h1>
+    <h1 style="font-family:monospace; color: darkcyan;">I knew it! You Love me a lot ❤️❤️❤️❤️ 😘</h1>
+    <h2 style="color: palegreen;">I hope this is your unique gift ever❤️❤️❤️❤️❤️❤️❤️</h2>
   </div>
+   <!-- BACKGROUND MUSIC -->
+   <audio id="bgMusic" autoplay loop>
+    <source src="../music/romantic-song.mp3" type="audio/mp3">
+  </audio>
+ <!-- BACKGROUND MUSIC -->
+ <audio id="bgMusic" autoplay loop>
+  <source src="../music/romantic-song.mp3" type="audio/mp3">
+</audio>
+
+  <script>
+    // auto play music on page load
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.play().catch((err) => {
+          console.log("Music blocked:", err);
+        });
+      }
+    });
+
+    // stop music function
+    function stopMusic() {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.pause();
+        music.currentTime = 0; // restart next time
+      }
+    }
+  </script>
 </body>
 
 </html>

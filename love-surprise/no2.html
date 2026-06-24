@@ -19,14 +19,44 @@
     </div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <h1>Ek aur baar Soch lo! 😣</h1>
-    <p>kyu aisa kar rahi ho Plzzz Man jao😣</p>
+    <h1 style="font-family:Arial, Helvetica, sans-serif; color: rebeccapurple;">Ek aur baar Soch le GANDU BUBU! 😣</h1>
+    <p style="color: crimson;">MERE DOST KI BHABI Banegi<
+      
+  /p>
 
     <div class="btn">
       <a href="yes.html">No</a>
       <a href="no3.html">Yes</a>
     </div>
   </div>
+   <!-- BACKGROUND MUSIC -->
+   <audio id="bgMusic" autoplay loop>
+    <source src="../music/romantic-song.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    // auto play music on page load
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.play().catch((err) => {
+          console.log("Music blocked:", err);
+        });
+      }
+    });
+
+    // stop music function
+    function stopMusic() {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.pause();
+        music.currentTime = 0; // restart next time
+      }
+    }
+  </script>
+
 </body>
 
 </html>

@@ -21,26 +21,53 @@
 
       <a href="https://tenor.com/view/manja-gif-22885016">
         Manja Sticker
-     
       </a>
 
     </div>
-    
 
     <script async src="https://tenor.com/embed.js"></script>
 
-    <h1>Do you love me? 🤗</h1>
-    <p>Chiku is all yours ❤️</p>
+    <h1 style="color: black;">Do you love me? 🤗</h1>
+    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: darkmagenta;">  ❤️ I Am Waiting For Your Reply</p>
 
     <div class="btn">
-
-      <!-- FIXED LOGIC -->
-      <a href="yes.html">Yes ❤️</a>
+      <a href="base.html">Yes ❤️</a>
       <a href="no1.html">No 💔</a>
-
     </div>
 
+    <!-- MUSIC CONTROL BUTTON -->
+    <button onclick="stopMusic()">⏹ Stop Music</button>
+
   </div>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="../music/romantic-song.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- SCRIPT -->
+  <script>
+    // auto play music on page load
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.play().catch((err) => {
+          console.log("Music blocked:", err);
+        });
+      }
+    });
+
+    // stop music function
+    function stopMusic() {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.pause();
+        music.currentTime = 0; // restart next time
+      }
+    }
+  </script>
 
 </body>
 

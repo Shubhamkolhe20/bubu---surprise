@@ -17,9 +17,8 @@
       <a href="https://tenor.com/search/mochi-stickers">Mochi Stickers</a>
     </div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <h1>Please think again! 🙄</h1>
-    <p>itni jaldi na matt bolo😥</p>
-
+    <h1 style="font-family: 'Courier New', Courier, monospace; color: olivedrab;">Please think again! 🙄</h1>
+    <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: navy;"> itni jaldi na matt bolo😥 soch le </p>
 
     <div class="petals">
       <img src="https://static.vecteezy.com/system/resources/previews/030/914/176/non_2x/red-beautiful-passionate-fresh-rose-petals-love-romantic-valentine-s-day-flowers-texture-background-free-photo.jpg" class="petal p1">
@@ -33,10 +32,38 @@
   </div>
 
     <div class="btn">
-      <a href="yes.html">No</a>
+      <a href="base1.html">No</a>
       <a href="no2.html">Yes</a>
     </div>
   </div>
+ <!-- BACKGROUND MUSIC -->
+ <audio id="bgMusic" autoplay loop>
+  <source src="../music/romantic-song.mp3" type="audio/mp3">
+</audio>
+
+
+  <script>
+    // auto play music on page load
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.play().catch((err) => {
+          console.log("Music blocked:", err);
+        });
+      }
+    });
+
+    // stop music function
+    function stopMusic() {
+      const music = document.getElementById("bgMusic");
+
+      if (music) {
+        music.pause();
+        music.currentTime = 0; // restart next time
+      }
+    }
+  </script>
 </body>
 
 </html>
