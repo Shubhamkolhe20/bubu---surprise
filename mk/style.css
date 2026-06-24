@@ -1,5 +1,60 @@
 /* RESET */
 
+
+
+
+
+
+.sparkle-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff4d6d;
+    position: relative;
+  
+    text-shadow: 0 0 5px #2b2526,
+                 0 0 10px #ff99aa,
+                 0 0 20px #ac1c34;
+  }
+  
+  /* sparkle dots */
+  .sparkle-text::before,
+  .sparkle-text::after {
+    content: "✨";
+    position: absolute;
+    font-size: 14px;
+    animation: floatSparkle 2s infinite ease-in-out;
+  }
+  
+  .sparkle-text::before {
+    left: -20px;
+    top: -10px;
+  }
+  
+  .sparkle-text::after {
+    right: -20px;
+    top: 10px;
+  }
+  
+  @keyframes floatSparkle {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.6; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #countdown {
     color: #ff4d6d;
     font-weight: bold;
@@ -123,3 +178,21 @@ button {
     from { transform: translateY(0); opacity: 1; }
     to { transform: translateY(-100vh); opacity: 0; }
 }
+
+#typewriter {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+  
+    background: linear-gradient(90deg, #141414, #cc1130, #e29d9d);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shine 3s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% { background-position: 0% }
+    100% { background-position: 200% }
+  }
